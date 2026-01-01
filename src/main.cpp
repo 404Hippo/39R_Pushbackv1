@@ -192,71 +192,71 @@ void competition_initialize() {}
 
 
 void soloAWP() {
-chassis.setPose(-1, -46.75, -90);
-setIntake(127);
-storage.extend();
-wing.retract();
-chassis.moveToPoint(-4, -46.75, 2000, {.minSpeed = 35, .earlyExitRange = 8});
-chassis.moveToPoint(40.5, -46.75, 2000, {.forwards = false, .maxSpeed = 75});
-chassis.waitUntilDone();
-matchloader.extend();
-chassis.turnToHeading(-175, 500);
-chassis.waitUntilDone();
-chassis.setPose(leftvalue, -55, -180);
-chassis.moveToPoint(48.5, -66, 1500, {.maxSpeed = 60});
-chassis.waitUntilDone();
-pros::delay(300); // could save time for future if matchloading is faster
-chassis.moveToPoint(49, -35.5, 3000, {.forwards = false, .maxSpeed = 75});
-matchloader.retract();
-wing.extend();
-chassis.waitUntilDone();
-chassis.setPose(49, -29.2, chassis.getPose().theta);
-leverPID = true;
-nextState();
-pros::delay(700);
-setIntake(-127);
-chassis.swingToHeading(-45, DriveSide::RIGHT, 2000, {.minSpeed = 20, .earlyExitRange = 5});
-nextState();
-chassis.moveToPose(24, -21, -90, 2000, {.maxSpeed = 95, .minSpeed = 20, .earlyExitRange = 4});
-setIntake(127);
-wing.retract();
-chassis.moveToPose(-24, -21, -90, 2000, {.maxSpeed = 95, .minSpeed = 20, .earlyExitRange = 4});
-chassis.waitUntil(40);
-matchloader.extend();
-chassis.moveToPose(-10, -10, -135, 2000, {.forwards = false, .maxSpeed = 70});
-storage.retract();
-wing.extend();
-chassis.waitUntilDone();
-leverPID = true;
-nextState();
-pros::delay(400);
-setIntake(-127);
-nextState();
-storage.extend();
-wing.retract();
-chassis.moveToPoint(-38, -40, 2000, {.minSpeed = 20, .earlyExitRange = 8});
-setIntake(127);
-chassis.waitUntilDone();
-chassis.turnToHeading(-173, 500);
-chassis.waitUntilDone();
-chassis.setPose(-rightvalue, -53, -180);
-chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
-chassis.waitUntilDone();
-pros::delay(300); // could save time for future if matchloading is faster
-chassis.moveToPoint(-49, -31, 2000, {.forwards = false, .maxSpeed = 75});
-matchloader.retract();
-wing.extend();
-chassis.waitUntilDone();
-leverPID = true;
-nextState();
-setIntake(-127);
+	chassis.setPose(-1, -46.75, -90);
+	setIntake(127);
+	storage.extend();
+	wing.retract();
+	chassis.moveToPoint(-4, -46.75, 2000, {.minSpeed = 35, .earlyExitRange = 8});
+	chassis.moveToPoint(40.5, -46.75, 2000, {.forwards = false, .maxSpeed = 75});
+	chassis.waitUntilDone();
+	matchloader.extend();
+	chassis.turnToHeading(-175, 500);
+	chassis.waitUntilDone();
+	chassis.setPose(leftvalue, -55, -180);
+	chassis.moveToPoint(48.5, -66, 1500, {.maxSpeed = 60});
+	chassis.waitUntilDone();
+	pros::delay(300); // could save time for future if matchloading is faster
+	chassis.moveToPoint(49, -35.5, 3000, {.forwards = false, .maxSpeed = 75});
+	matchloader.retract();
+	wing.extend();
+	chassis.waitUntilDone();
+	chassis.setPose(49, -29.2, chassis.getPose().theta);
+	leverPID = true;
+	nextState();
+	pros::delay(700);
+	setIntake(-127);
+	chassis.swingToHeading(-45, DriveSide::RIGHT, 2000, {.minSpeed = 20, .earlyExitRange = 5});
+	nextState();
+	chassis.moveToPose(24, -21, -90, 2000, {.maxSpeed = 95, .minSpeed = 20, .earlyExitRange = 4});
+	setIntake(127);
+	wing.retract();
+	chassis.moveToPose(-24, -21, -90, 2000, {.maxSpeed = 95, .minSpeed = 20, .earlyExitRange = 4});
+	chassis.waitUntil(40);
+	matchloader.extend();
+	chassis.moveToPose(-10, -10, -135, 2000, {.forwards = false, .maxSpeed = 70});
+	storage.retract();
+	wing.extend();
+	chassis.waitUntilDone();
+	leverPID = true;
+	nextState();
+	pros::delay(400);
+	setIntake(-127);
+	nextState();
+	storage.extend();
+	wing.retract();
+	chassis.moveToPoint(-38, -40, 2000, {.minSpeed = 20, .earlyExitRange = 8});
+	setIntake(127);
+	chassis.waitUntilDone();
+	chassis.turnToHeading(-173, 500);
+	chassis.waitUntilDone();
+	chassis.setPose(-rightvalue, -53, -180);
+	chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
+	chassis.waitUntilDone();
+	pros::delay(300); // could save time for future if matchloading is faster
+	chassis.moveToPoint(-49, -31, 2000, {.forwards = false, .maxSpeed = 75});
+	matchloader.retract();
+	wing.extend();
+	chassis.waitUntilDone();
+	leverPID = true;
+	nextState();
+	setIntake(-127);
 }
 
 void skills() {
     chassis.setPose(-1, -46.75, -90);
     setIntake(127);
     storage.extend();
-    wing.retract();
+	isStorageExtended = true;
     chassis.moveToPoint(40.5, -46.75, 2000, {.forwards = false, .maxSpeed = 75});
     chassis.waitUntilDone();
     matchloader.extend();
@@ -281,7 +281,7 @@ void skills() {
     chassis.turnToHeading(-10, 500);
     chassis.waitUntilDone();
     chassis.moveToPoint(52, 10, 1000, {.forwards = false, .maxSpeed = 70});
-    wing.extend();
+    wing.retract();
     chassis.waitUntilDone();
     chassis.setPose(49, 35.5, chassis.getPose().theta);
     leverPID = true;
@@ -291,13 +291,13 @@ void skills() {
     nextState();
     chassis.moveToPoint(48.5, 66, 1500, {.maxSpeed = 60});
     setIntake(127);
-    wing.retract();
+    wing.extend();
     chassis.waitUntilDone();
     pros::delay(1000); // could save time for future if matchloading is faster
     chassis.moveToPoint(48.5, 66, 1500, {.maxSpeed = 50});
     chassis.waitUntilDone();
     chassis.moveToPoint(49, 35.5, 1000, {.forwards = false, .maxSpeed = 70});
-    wing.extend();
+    wing.retract();
     chassis.waitUntilDone();
     matchloader.retract();
     leverPID = true;
@@ -309,63 +309,61 @@ void skills() {
     // clear blue park zone
     chassis.swingToHeading(-80, DriveSide::LEFT, 2000, {.minSpeed = 20, .earlyExitRange = 5});
     chassis.moveToPoint(-45, 45, 3000, {.maxSpeed = 85});
-    wing.retract();
+    wing.extend();
     setIntake(127);
     chassis.waitUntilDone();
     chassis.turnToHeading(-5, 500);
     matchloader.extend();
     chassis.waitUntilDone();
     chassis.setPose(-leftvalue, 55, 0);
-    chassis.moveToPoint(-48.5, 66.5, 1500, {.maxSpeed = 60});
+    chassis.moveToPoint(-48.5, 67.5, 1500, {.maxSpeed = 60});
     chassis.waitUntilDone();
     pros::delay(1000); // could save time for future if matchloading is faster
-    chassis.moveToPoint(-48.5, 66.5, 1500, {.maxSpeed = 60});
+    chassis.moveToPoint(-48.5, 67.5, 1500, {.maxSpeed = 60});
     chassis.waitUntilDone();
     chassis.moveToPoint(-49, 55, 3000, {.forwards = false, .maxSpeed = 75});
     chassis.waitUntilDone();
     chassis.turnToHeading(30, 800);
     chassis.waitUntilDone();
     chassis.moveToPoint(-62, 45, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
-    chassis.moveToPose(-62, -10, 180, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
+    chassis.moveToPose(-62, -30, 0, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
     chassis.turnToHeading(90, 500);
     chassis.waitUntilDone();
-    chassis.moveToPoint(-52, -20, 2000);
+    chassis.moveToPoint(-51, -30, 2000);
     chassis.waitUntilDone();
-    chassis.turnToHeading(180, 500);
+    chassis.turnToHeading(175, 500);
     chassis.waitUntilDone();
-    chassis.moveToPoint(-52, 10, 1000, {.forwards = false, .maxSpeed = 70});
-    wing.extend();
-    chassis.waitUntilDone();
-
-    /*
-    chassis.setPose(-49, -35.5, chassis.getPose().theta);
-    leverPID = true;
-    nextState();
-    pros::delay(1300);
-    setIntake(-127);
-    nextState();
-    chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
-    setIntake(127);
-    wing.retract();
-    chassis.waitUntilDone();
-    pros::delay(1000); // could save time for future if matchloading is faster
-    chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 50});
-    chassis.waitUntilDone();
-    chassis.moveToPoint(-49, -35.5, 1000, {.forwards = false, .maxSpeed = 70});
-    matchloader.retract();
-    wing.extend();
-    chassis.waitUntilDone();
-    leverPID = true;
-    nextState();
-    pros::delay(1300);
-    setIntake(-127);
-    nextState();
-    chassis.setPose(-49, -29.2, chassis.getPose().theta);
-*/
+	chassis.moveToPoint(-51, -10, 1000, {.forwards = false, .maxSpeed = 70}); //this line blocking the rest
+	wing.retract();
+	chassis.waitUntilDone();
+	chassis.setPose(-49, -35.5, chassis.getPose().theta);
+	leverPID = true;
+	nextState();
+	pros::delay(1300);
+	setIntake(-127);
+	nextState();
+	chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
+	setIntake(127);
+	wing.retract();
+	chassis.waitUntilDone();
+	pros::delay(1000); // could save time for future if matchloading is faster
+	chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
+	chassis.waitUntilDone();
+	chassis.moveToPoint(-49, -35.5, 1000, {.forwards = false, .maxSpeed = 70});
+	matchloader.retract();
+	wing.extend();
+	chassis.waitUntilDone();
+	leverPID = true;
+	nextState();
+	pros::delay(1300);
+	setIntake(-127);
+	nextState();
+	chassis.setPose(-49, -29.2, chassis.getPose().theta);
+	// clear red park zone and park
 }
 
 void autonomous() {
-    soloAWP();
+    skills();
 }
 
 void opcontrol() {
