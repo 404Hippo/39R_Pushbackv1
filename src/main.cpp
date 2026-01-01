@@ -276,7 +276,7 @@ void skills() {
     chassis.moveToPose(66, 30, 180, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
     chassis.turnToHeading(-90, 500);
     chassis.waitUntilDone();
-    chassis.moveToPoint(52, 30, 2000);
+    chassis.moveToPoint(54, 30, 2000);
     chassis.waitUntilDone();
     chassis.turnToHeading(-10, 500);
     chassis.waitUntilDone();
@@ -326,13 +326,14 @@ void skills() {
     chassis.turnToHeading(30, 800);
     chassis.waitUntilDone();
     chassis.moveToPoint(-62, 45, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
-    chassis.moveToPose(-62, -30, 0, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
+    chassis.moveToPose(-62, -25, 0, 2000, {.forwards = false, .minSpeed = 20, .earlyExitRange = 8});
     chassis.turnToHeading(90, 500);
     chassis.waitUntilDone();
-    chassis.moveToPoint(-51, -30, 2000);
+    chassis.moveToPoint(-50, -25, 2000);
     chassis.waitUntilDone();
-    chassis.turnToHeading(175, 500);
+    chassis.turnToHeading(170, 500);
     chassis.waitUntilDone();
+    chassis.setPose(-51, -25, 180);
 	chassis.moveToPoint(-51, -10, 1000, {.forwards = false, .maxSpeed = 70}); //this line blocking the rest
 	wing.retract();
 	chassis.waitUntilDone();
