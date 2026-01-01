@@ -334,7 +334,7 @@ void skills() {
     chassis.turnToHeading(170, 500);
     chassis.waitUntilDone();
     chassis.setPose(-51, -25, 180);
-	chassis.moveToPoint(-51, -10, 1000, {.forwards = false, .maxSpeed = 70}); //this line blocking the rest
+	chassis.moveToPoint(-51, -10, 1000, {.forwards = false, .maxSpeed = 70}); //this line freezes
 	wing.retract();
 	chassis.waitUntilDone();
 	chassis.setPose(-49, -35.5, chassis.getPose().theta);
