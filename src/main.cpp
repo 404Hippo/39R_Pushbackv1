@@ -387,7 +387,7 @@ void skills() {
     chassis.setPose(-1, -46.75, -90);
     setIntake(127);
     storage.extend();
-	isStorageExtended = true;
+    isStorageExtended = true;
     chassis.moveToPoint(40.5, -46.75, 2000, {.forwards = false, .maxSpeed = 75});
     chassis.waitUntilDone();
     matchloader.extend();
@@ -464,37 +464,37 @@ void skills() {
     chassis.waitUntilDone();
     chassis.turnToHeading(175, 1000);
     chassis.waitUntilDone();
-	chassis.moveToPoint(-52, -10, 1000, {.forwards = false}); //this line freezes
-	wing.retract();
-	chassis.waitUntilDone();
-	chassis.setPose(-49, -35.5, chassis.getPose().theta);
-	leverPID = true;
-	nextState();
-	pros::delay(1300);
-	setIntake(-127);
-	nextState();
-	chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
-	setIntake(127);
-	wing.retract();
-	chassis.waitUntilDone();
-	pros::delay(1000); // could save time for future if matchloading is faster
-	chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
-	chassis.waitUntilDone();
-	chassis.moveToPoint(-49, -35.5, 1000, {.forwards = false, .maxSpeed = 70});
-	matchloader.retract();
-	wing.extend();
-	chassis.waitUntilDone();
-	leverPID = true;
-	nextState();
-	pros::delay(1300);
-	setIntake(-127);
-	nextState();
-	chassis.setPose(-49, -29.2, chassis.getPose().theta);
-	// clear red park zone and park
+    chassis.moveToPoint(-52, -10, 2000, {.forwards = false}); //this line freezes
+    wing.retract();
+    chassis.waitUntilDone();
+    chassis.setPose(-49, -35.5, chassis.getPose().theta);
+    leverPID = true;
+    nextState();
+    pros::delay(1300);
+    setIntake(-127);
+    nextState();
+    chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
+    setIntake(127);
+    wing.retract();
+    chassis.waitUntilDone();
+    pros::delay(1000); // could save time for future if matchloading is faster
+    chassis.moveToPoint(-48.5, -66, 1500, {.maxSpeed = 60});
+    chassis.waitUntilDone();
+    chassis.moveToPoint(-49, -35.5, 1000, {.forwards = false, .maxSpeed = 70});
+    matchloader.retract();
+    wing.extend();
+    chassis.waitUntilDone();
+    leverPID = true;
+    nextState();
+    pros::delay(1300);
+    setIntake(-127);
+    nextState();
+    chassis.setPose(-49, -29.2, chassis.getPose().theta);
+    // clear red park zone and park
 }
 
 void autonomous() {
-    left();
+    skills();
 }
 
 void opcontrol() {
