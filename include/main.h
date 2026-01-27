@@ -41,8 +41,8 @@
  */
 //#include "okapi/api.hpp"
 
-#include "autons.hpp"
-#include "globals.hpp"
+#include "autons.h"
+#include "globals.h"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
